@@ -2014,7 +2014,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d6bd6b;
+  background: #1db6ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3266,14 +3266,9 @@ ul.breadcrumb li+li:last-child {
   }
 }
 body {
-  background: url("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4081850530,2489340152&fm=27&gp=0.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: url("http://img0.imgtn.bdimg.com/it/u=2680938755,3755380451&fm=27&gp=0.jpg");
 }
 .main-inner {
-  margin-top: 60px;
-  padding: 60px 60px 60px 60px;
   background: #fff;
   opacity: 0.8;
-  min-height: 500px;
 }
