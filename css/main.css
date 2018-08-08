@@ -2014,7 +2014,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8a8a2e;
+  background: #d6bd6b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3269,7 +3269,6 @@ body {
   background: url("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4081850530,2489340152&fm=27&gp=0.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 50%;
 }
 .main-inner {
   margin-top: 60px;
