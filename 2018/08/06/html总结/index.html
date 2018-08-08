@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Mero的客栈">
 <meta property="og:description" content="HTML前端总结 HTML   hyperText  markup  language  超文本链接语言 根标签分头标签和尾标签   eg:&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; head标签设置给浏览器看的，body标签设置给用户看的。 属性分为属性名和属性值，只能设置在头标签上。 charset属性：①gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文②gbk：国家标准">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T03:09:33.512Z">
+<meta property="og:updated_time" content="2018-08-08T03:30:25.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML">
 <meta name="twitter:description" content="HTML前端总结 HTML   hyperText  markup  language  超文本链接语言 根标签分头标签和尾标签   eg:&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; head标签设置给浏览器看的，body标签设置给用户看的。 属性分为属性名和属性值，只能设置在头标签上。 charset属性：①gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文②gbk：国家标准">
@@ -397,7 +397,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2018-08-08 11:09:33" itemprop="dateModified" datetime="2018-08-08T11:09:33+08:00">2018-08-08</time>
+                <time title="Updated at: 2018-08-08 11:30:25" itemprop="dateModified" datetime="2018-08-08T11:30:25+08:00">2018-08-08</time>
               
             
           </span>
@@ -474,10 +474,11 @@
 <li><p><code>&lt;html lang = &quot;en&quot;&gt;</code><br>告诉搜索引擎爬虫，网站关于什么内容。SEO  搜索引擎优化</p>
 </li>
 <li><p>meta标签：head区的一个辅助性标签。一共有两个属性，包括name属性和http-equiv属性，不同的属性有不同的属性值，这些属性值实现了不同的网页功能。以下详细介绍一下两种属性：<br>①name属性：name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name = &quot;keywords&quot; content = &quot;science,education,culture&quot;&gt;</span><br><span class="line">&lt;meta name = &quot;description&quot; content = &quot;miaoshuneirong&quot;&gt;</span><br><span class="line">&lt;meta name = &quot;robots&quot; content = &quot;&quot;&gt;</span><br><span class="line">&lt;meta name = &quot;author&quot; content = &quot;&quot;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name = &quot;keywords&quot; content = &quot;science,education,culture&quot;&gt; //告诉搜索引擎你网页的关键字是什么</span><br><span class="line">&lt;meta name = &quot;description&quot; content = &quot;miaoshuneirong&quot;&gt;//网站描述内容</span><br><span class="line">&lt;meta name = &quot;robots&quot; content = &quot;&quot;&gt; //机器人向导，告诉搜索机器人哪些页面需要索引</span><br><span class="line">&lt;meta name = &quot;author&quot; content = &quot;&quot;&gt; //作者，标注网页的作者</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>keywords：告诉搜索引擎你网页的关键字是什么<br>description：网站描述内容<br>robots：机器人向导，告诉搜索机器人哪些页面需要索引<br>author：作者，标注网页的作者</p>
+<p>②http-equiv属性：顾名思义就是相当于http文件头的作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确的显示网页内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv = &quot;Expires&quot; content = &quot;&quot;&gt; //用于设定网页的到期时间，一旦网页过期，必须到服务器上重新传输</span><br><span class="line">&lt;meta http-equiv = &quot;Pragma&quot; content = &quot;&quot;&gt; //禁止浏览器从本地计算机的缓存中访问页面内容</span><br><span class="line">&lt;meta http-equiv = &quot;Refresh&quot; content = &quot;&quot;&gt; //自动刷新并指向新的页面</span><br><span class="line">&lt;meta http-equiv = &quot;Set-Cookie&quot; content = &quot;&quot;&gt; //如果网页过期，那么存盘中的cookie将被删除</span><br><span class="line">&lt;meta http-equiv = &quot;Window-target&quot; content = &quot;&quot;&gt; //显示窗口的设定，强制页面在当前窗口以独立页面显示，用来防止别人在框架中调用自己的页面</span><br><span class="line">&lt;meta http-equiv = &quot;content-type&quot; content = &quot;&quot;&gt;//设定页面显示的字符集</span><br><span class="line">&lt;meta http-equiv = &quot;Cache-Control&quot; content = &quot;&quot;&gt; //指定请求和响应遵循的缓存机制。</span><br></pre></td></tr></table></figure></p>
+<p>Cache-Control指定请求和响应遵循的缓存机制。在请求消息或响应消息中设置Cache-Control并不会修改另一个消息处理过程中的缓存处理过程。请求时的缓存指令包括no-cache、no-store、max-age、max-stale、min-fresh、only-if-cached，响应消息中的指令包括public、private、no-cache、no-store、no-transform、must-revalidate、proxy-revalidate、max-age。各个消息中的指令含义如下<br>Public指示响应可被任何缓存区缓存<br>Private指示对于单个用户的整个或部分响应消息，不能被共享缓存处理。这允许服务器仅仅描述当用户的部分响应消息，此响应消息对于其他用户的请求无效<br>no-cache指示请求或响应消息不能缓存<br>no-store用于防止重要的信息被无意的发布。在请求消息中发送将使得请求和响应消息都不使用缓存。<br>max-age指示客户机可以接收生存期不大于指定时间（以秒为单位）的响应<br>min-fresh指示客户机可以接收响应时间小于当前时间加上指定时间的响应<br>max-stale指示客户机可以接收超出超时期间的响应消息。如果指定max-stale消息的值，那么客户机可以接收超出超时期指定值之内的响应消息。</p>
 <ol start="7">
 <li>title标签，在head标签里面，修改网页页脚标的文字，logo无法本地添加，挂载服务器时传的图片。</li>
 <li>文字分割符：空格和回车，HTML空格编码：&amp;nbsp；，小于编码&amp;lt；，大于编码&amp;gt；。</li>
