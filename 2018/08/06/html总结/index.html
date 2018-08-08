@@ -1,93 +1,477 @@
 <!DOCTYPE html>
-<html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <meta name="description" content="HTML前端总结1，HTML   hyperText  markup  language  超文本链接语言2，根标签分头标签和尾标签   eg: &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;3，head标签设置给浏览器看的，body标签设置给用户看的。4，属性分为属性名和属性值，只能设置在头标" />
-  
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
 
   
   
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-corner-indicator.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
   
-  
-  
-  
-  <title>html总结 | Mero的客栈</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HTML前端总结1，HTML   hyperText  markup  language  超文本链接语言2，根标签分头标签和尾标签   eg: &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;3，head标签设置给浏览器看的，body标签设置给用户看的。4，属性分为属性名和属性值，只能设置在头标签上。 charset属性：（1），gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文（">
+
+
+
+
+  <meta name="description" content="HTML前端总结 HTML   hyperText  markup  language  超文本链接语言 根标签分头标签和尾标签   eg:&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; head标签设置给浏览器看的，body标签设置给用户看的。 属性分为属性名和属性值，只能设置在头标签上。 charset属性：①gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文②gbk：国家标准">
 <meta name="keywords" content="分享,导航">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html总结">
+<meta property="og:title" content="HTML">
 <meta property="og:url" content="http://yoursite.com/2018/08/06/html总结/index.html">
 <meta property="og:site_name" content="Mero的客栈">
-<meta property="og:description" content="HTML前端总结1，HTML   hyperText  markup  language  超文本链接语言2，根标签分头标签和尾标签   eg: &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;3，head标签设置给浏览器看的，body标签设置给用户看的。4，属性分为属性名和属性值，只能设置在头标签上。 charset属性：（1），gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文（">
+<meta property="og:description" content="HTML前端总结 HTML   hyperText  markup  language  超文本链接语言 根标签分头标签和尾标签   eg:&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; head标签设置给浏览器看的，body标签设置给用户看的。 属性分为属性名和属性值，只能设置在头标签上。 charset属性：①gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文②gbk：国家标准">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-08T02:06:52.699Z">
+<meta property="og:updated_time" content="2018-08-08T02:24:25.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html总结">
-<meta name="twitter:description" content="HTML前端总结1，HTML   hyperText  markup  language  超文本链接语言2，根标签分头标签和尾标签   eg: &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;3，head标签设置给浏览器看的，body标签设置给用户看的。4，属性分为属性名和属性值，只能设置在头标签上。 charset属性：（1），gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文（">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:title" content="HTML">
+<meta name="twitter:description" content="HTML前端总结 HTML   hyperText  markup  language  超文本链接语言 根标签分头标签和尾标签   eg:&amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; head标签设置给浏览器看的，body标签设置给用户看的。 属性分为属性名和属性值，只能设置在头标签上。 charset属性：①gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文②gbk：国家标准">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/06/html总结/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HTML | Mero的客栈</title>
   
 
-  
-  <!-- baidu webmaster push -->
-  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="Mero的客栈" rel="home">Mero的客栈</a>
-      </h1>
-      
-        <script type="text/javascript" src="http://api.hitokoto.us/rand?encode=js&charset=utf-8"></script>
-        <h2 class="site-description"><script>hitokoto();</script></h2>
-      
-    </hgroup>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
-                
-                </ul>
-            </div>
-    </nav>
-</header>
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-html总结" class="post-html总结 post type-post status-publish format-standard hentry">
-    <!---->
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-      <header class="entry-header">
-        
-        
   
-    <h1 class="entry-title article-title">
-      html总结
-    </h1>
+  
+    
   
 
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Mero2">
+      <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub">
+    </a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mero的客栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
         
-        <div class="comments-link">
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Kategorien</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/08/06/html总结/" data-id="cjkki0z350002o4n5rbpvnzgh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Suche</a>
+        </li>
       
-        <h1 id="HTML前端总结"><a href="#HTML前端总结" class="headerlink" title="HTML前端总结"></a>HTML前端总结</h1><p>1，HTML   hyperText  markup  language  超文本链接语言<br>2，根标签分头标签和尾标签   eg:<br> <code>&lt;html&gt;&lt;/html&gt;</code><br>3，head标签设置给浏览器看的，body标签设置给用户看的。<br>4，属性分为属性名和属性值，只能设置在头标签上。 charset属性：<br>（1），gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文<br>（2）， gbk：国家标准扩展版本，识别繁体中文<br>（3），Unicode：万国码     utf-8也是万国码。Unicode Transformation Format    8比特<br>5，<html lang="en">:告诉搜索引擎爬虫，网站关于什么内容。<br>       SEO   搜索引擎优化<br>6，<meta name="keywords" content="">告诉搜索引擎爬虫，网站关键词<br>      <meta name="description" content="">告诉搜索引擎爬虫，网站描述内容（一般是title的扩展<br>7，title标签，在head标签里面，修改网页页脚标的文字，logo无法本地添加，挂载服务器时传的图片。<br>8，文字分割符：空格和回车，HTML空格编码：&amp;nbsp；，小于编码&amp;lt；，大于编码&amp;gt；。</html></p>
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/html总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mero">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mero的客栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-08-06 17:05:10" itemprop="dateCreated datePublished" datetime="2018-08-06T17:05:10+08:00">2018-08-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-08-08 10:24:25" itemprop="dateModified" datetime="2018-08-08T10:24:25+08:00">2018-08-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/06/html总结/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/06/html总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HTML前端总结"><a href="#HTML前端总结" class="headerlink" title="HTML前端总结"></a>HTML前端总结</h1><ol>
+<li>HTML   hyperText  markup  language  超文本链接语言</li>
+<li>根标签分头标签和尾标签   eg:<br><code>&lt;html&gt;&lt;/html&gt;</code></li>
+<li>head标签设置给浏览器看的，body标签设置给用户看的。</li>
+<li>属性分为属性名和属性值，只能设置在头标签上。 charset属性：<br>①gb2312：国标2312，识别中文，亚洲文字，不包括繁体中文<br>②gbk：国家标准扩展版本，识别繁体中文<br>③Unicode：万国码     utf-8也是万国码。Unicode Transformation Format    8比特<br>5，<code>&lt;html lang = &quot;en&quot;&gt;</code><br>告诉搜索引擎爬虫，网站关于什么内容。SEO   搜索引擎优化<br>6，meta标签：是head区的一个辅助性标签。一共有两个属性，包括name属性和http-equiv属性，不同的属性有不同的属性值，这些属性值实现了不同的网页功能。<br>7，title标签，在head标签里面，修改网页页脚标的文字，logo无法本地添加，挂载服务器时传的图片。<br>8，文字分割符：空格和回车，HTML空格编码：&amp;nbsp；，小于编码&amp;lt；，大于编码&amp;gt；。</li>
+</ol>
 <p>9，标签：<br>（1）， p， 段落标签，成段展示，里边儿文本成段展示。<br>（2），h1~h6，字体从大到小，设计字体的大小，独占一行成段展示，标题标签，加粗文字。<br>（3），strong，加粗文字       em，斜体<br>（4），address，独占一行，斜体文字，不常用<br>（5），i，斜体文字    b，加粗文本  老功能<br>（6），del，文本加斜杠  原价50元，开发中不允许使用，因为下划线既有结构也有样式，css语言中设置text-decoration的值为line-through和上面的能达到一样的功能</p>
 <p>（7），div，span，重要标签，独占一行，对每个部分进行分类，结构化，功能化，集体操作。div和span的区别:This is crazy ，当有这种形式的时候，div套所有文本，而有独特样式crazy可以用span套，设置独特的样式。span是内联的。section标签和div标签相似。</p>
 <p>（8），br，换行展示，a<br>b，a和b换换行展示。单标签，自己代表一定功能，不包裹内容<br>（9），hr，水平线<br>（10），<ol><li></li></ol>有序列表，ol上有type属性，值有1（默认），a/A，i/I，排序类型。  reversed属性，值有reversed，逆序排列；start属性，值为数字，从第几个开始排序。<br>（11），<ul><li></li></ul>无序列表 （unorder list  ,list  item)； 用在：大功能块儿里有很多功能子项。子项除内容不同，样式功能相同。</p>
@@ -106,111 +490,845 @@
 <p>&lt;input type = “text” name = “username” style = “color:#999” value = “请输入用户名” onfocus = “if(this.value == ‘请输入用户名’){this.value = ‘’;this.style.color = ‘#424242’}”onblur = “if(this.value ==’’){this.value = ‘请输入用户名’;this.style.color = ‘#999’}”&gt;</p>
 
       
-    </div><!-- .entry-content -->
+    </div>
 
-    <footer class="entry-meta">
-    <a href="/2018/08/06/html总结/">
-    <time datetime="2018-08-06T09:05:10.000Z" class="entry-date">
-        2018-08-06
-    </time>
-</a>
     
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>客官可以试试以下按钮</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Mero WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Mero Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/分享/" rel="tag"><i class = "fa fa-google"></i>分享</a>
+          
+            <a href="/tags/导航/" rel="tag"><i class = "fa fa-google"></i>导航</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+               <div>
+                 
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+               </div>
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分享/">分享</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/导航/">导航</a></li></ul>
 
-    </footer>
-</article>
+          </div>
+          
 
-
-    
-
-
-
-
-
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
   
-    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
-    <div>
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="搜索" />
+    <div class="comments" id="comments">
     </div>
-</form></aside>
   
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/学习笔记/">学习笔记</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </aside>
 
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
-      <ul>
+
+
+        </div>
         
-          <li>
-            <a href="/2018/08/06/html总结/">html总结</a>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
           </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog.jpg"
+                alt="Mero" />
+            
+              <p class="site-author-name" itemprop="name">Mero</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">Kategorien</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">Tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Mero2" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/Mero2017" target="_blank" title="weibo"><i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML前端总结"><span class="nav-number">1.</span> <span class="nav-text">HTML前端总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
-      </ul>
-    </div>
-  </aside>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mero</span>
 
   
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/分享/">分享</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/导航/">导航</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-content tagcloud">
-      <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a>
-    </div>
-  </aside>
 
   
 </div>
+
+
+
+<!--
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="Total Visitors">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="Total Views">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
       </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2018 Mero
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-</footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    </footer>
 
-<script src="/js/jquery-2.0.3.min.js"></script>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
+    
+	
+    
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-<script src="/js/navigation.js"></script>
-
-<div id="bg"></div>
-
+    
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'rNNcV5cqFn3XIP4b8KgzrG4f-gzGzoHsz',
+        appKey: 'qcw3iuD0qB2kwLgV86v42rzT',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
