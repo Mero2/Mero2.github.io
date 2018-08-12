@@ -115,25 +115,25 @@
 
 
 
-  <meta name="description" content="编程形式的区别（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。">
-<meta name="keywords" content="JavaScript,类型转化">
+  <meta name="description" content="数组的定义（1）var arr = [  ];数组字面量（基本上用这个函数定义数组）；（2）var arr = new Array（）；构造函数构造数组，当里边儿有多个参数时，参数作为数组的值，当里边儿只填一个数时，则系统默认为arr.length; 数组的读和写（1）arr[num] //不可以溢出读，数组是特殊的对象，当溢出读时，返回undefined；（2）arr[num] = xxx;//">
+<meta name="keywords" content="JavaScript,数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据类型转化（三）">
-<meta property="og:url" content="http://yoursite.com/2018/08/09/数据类型转化（三）/index.html">
+<meta property="og:title" content="数组（十）">
+<meta property="og:url" content="http://yoursite.com/2018/08/12/数组（十）/index.html">
 <meta property="og:site_name" content="Mero的客栈">
-<meta property="og:description" content="编程形式的区别（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。">
+<meta property="og:description" content="数组的定义（1）var arr = [  ];数组字面量（基本上用这个函数定义数组）；（2）var arr = new Array（）；构造函数构造数组，当里边儿有多个参数时，参数作为数组的值，当里边儿只填一个数时，则系统默认为arr.length; 数组的读和写（1）arr[num] //不可以溢出读，数组是特殊的对象，当溢出读时，返回undefined；（2）arr[num] = xxx;//">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-09T03:18:09.278Z">
+<meta property="og:updated_time" content="2018-08-12T07:47:13.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据类型转化（三）">
-<meta name="twitter:description" content="编程形式的区别（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。">
+<meta name="twitter:title" content="数组（十）">
+<meta name="twitter:description" content="数组的定义（1）var arr = [  ];数组字面量（基本上用这个函数定义数组）；（2）var arr = new Array（）；构造函数构造数组，当里边儿有多个参数时，参数作为数组的值，当里边儿只填一个数时，则系统默认为arr.length; 数组的读和写（1）arr[num] //不可以溢出读，数组是特殊的对象，当溢出读时，返回undefined；（2）arr[num] = xxx;//">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/09/数据类型转化（三）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/12/数组（十）/"/>
 
 
 
@@ -143,7 +143,7 @@
   };
 </script>
 
-  <title>数据类型转化（三） | Mero的客栈</title>
+  <title>数组（十） | Mero的客栈</title>
   
 
 
@@ -338,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/数据类型转化（三）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/数组（十）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mero">
@@ -355,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据类型转化（三）
+          <h1 class="post-title" itemprop="name headline">数组（十）
               
             
           </h1>
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2018-08-09 10:37:17 / 修改时间：11:18:09" itemprop="dateCreated datePublished" datetime="2018-08-09T10:37:17+08:00">2018-08-09</time>
+              <time title="创建时间：2018-08-12 15:19:10 / 修改时间：15:47:13" itemprop="dateCreated datePublished" datetime="2018-08-12T15:19:10+08:00">2018-08-12</time>
             
 
             
@@ -417,8 +417,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/09/数据类型转化（三）/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/09/数据类型转化（三）/" itemprop="commentCount"></span>
+                <a href="/2018/08/12/数组（十）/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/12/数组（十）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -454,10 +454,16 @@
       
 
       
-        <h1 id="编程形式的区别"><a href="#编程形式的区别" class="headerlink" title="编程形式的区别"></a>编程形式的区别</h1><p>（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，<br>（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。</p>
-<h1 id="typeof方法（判断数据类型）"><a href="#typeof方法（判断数据类型）" class="headerlink" title="typeof方法（判断数据类型）"></a>typeof方法（判断数据类型）</h1><p>（1）返回的六个数据类型：number，string，Boolean，undefined，object，function。这六种类型都是字符串的类型（字符串的number，string，Boolean，undefined，object，function）<br>（2）能够准确判断的只有：number，string，Boolean，undefined四种类型，后两种无法准确判断。例如：typeof(null) = object；判断引用值时返回的都是object。<br>（3）typeof();括号中加入传一个未经声明的变量，不报错（唯一 一个），返回undefined。</p>
-<h1 id="显式类型转换"><a href="#显式类型转换" class="headerlink" title="显式类型转换"></a>显式类型转换</h1><p>（1）var num = Number();将字符串转换成数字类型。null转成0，undefined为NaN，空串为0，false为0，true为1。无法转换的字符串为NaN。<br>（2）var num = parseInt();将字符串转换成整数类型，从数字类看到非数字类截止，转为整型返回。null，undefined，false，true转换为NaN。parseInt(“123”,16);16为基底（基底范围为2-36），将括号中的123看成16进制的数，然后转换成十进制的数。0也可以为基底，看成十进制，但有的浏览器用不了。<br>（3）var num = parseFloat();将字符串转换成小数。<br>（4）var num = String();转换成字符串。<br>（5）var num = Boolean();转换成布尔值。<br>（6）var str = ; var num = str.toString();调用toString方法。转换成字符串。null和undefined没有toString方法。括号中传数字，将str看成十进制的数，转换成括号中数字进制的值。</p>
-<h1 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h1><p>（1）isNaN();是数字返回false，不是数字返回true。<br>var num = ; var b = isNaN（num）；两段代码之间隐式调用了Number方法，转换成数字类型，在看是否和NaN相等。（NaN不等于任何值）。<br>（2）”++/–”  “+/-（一元正负）”；当有加加和减减符号时，会先隐式调用number方法，转成数字类型，不管先运算还是先执行。当+/-作为正负的符号时，调用number方法，转成number类型。<br>（3）”+”<br>①数值类型和布尔类型的相加，将布尔类型的值转为number值，再运算，结果为number类型。<br>②数字和数字相加，运算结果为数字类型。<br>③数字和字符串相加，先将加号两边转换成string类型，再进行拼接，运算结果为string类型。是拼接，而不是运算。<br>（4）”-“, “*”, “/“, “%”；将符号两侧的都变成数字类型，再进行运算，计算的结果是数字类型。<br>（5）”&amp;&amp;”, “||”, “!”；判断之前调用Boolean方法，转成布尔值进行判断。<br>（6）”&lt;” “&gt;”, “&lt;=”, “&gt;=”；当符号一侧为数字时，调用number方法，将另外一个转成数字类型，再进行比较。null和undefined无法和零进行比较，他俩相等。<br>（7）”==”, “!=”；和大于小于的规则一样。</p>
+        <h1 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h1><p>（1）var arr = [  ];数组字面量（基本上用这个函数定义数组）；<br>（2）var arr = new Array（）；构造函数构造数组，当里边儿有多个参数时，参数作为数组的值，当里边儿只填一个数时，则系统默认为arr.length;</p>
+<h1 id="数组的读和写"><a href="#数组的读和写" class="headerlink" title="数组的读和写"></a>数组的读和写</h1><p>（1）arr[num] //不可以溢出读，数组是特殊的对象，当溢出读时，返回undefined；<br>（2）arr[num] = xxx;//可以溢出写，没有写的位置用undefined填充。</p>
+<h1 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h1><h2 id="可以改变原数组"><a href="#可以改变原数组" class="headerlink" title="可以改变原数组"></a>可以改变原数组</h2><p>（1）arr.push();往arr数组里加参数。以下是push方法的代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.push = function() &#123;</span><br><span class="line">    for(var i = 0; i &lt; arguments.length; i ++) &#123;</span><br><span class="line">        this[this.length] = arguments[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">（2）arr.pop()：将数组的最后一位删掉，一次只能移除一位，传参数没有作用。</span><br><span class="line">实际上是将数组的最后一位剪切出来，用变量能接收数组pop后的值。为数组最后一位。</span><br><span class="line">（3）shift()：在数组的前面剪切数组里的参数。</span><br><span class="line">（4）unshift()：在数组的最前面加上括号中的参数。</span><br><span class="line">（5）splice()：传多位参数，第一个参数代表从第几位开始，第二个参数代表剪切多少个长度，将第三个及以后的参数从切口处添加进去。剪切的参数以数组形式返回。arr.splice(2,0,,,)，从第二位开始切，切零位，常用此方法往数组特定位置加参数。</span><br><span class="line">（6）sort()：按阿斯特码进行升序排列（将数字，拆开一位一位比较eg：1&gt;12&gt;2）。可以自己定义使用：</span><br><span class="line">①当返回值为负值，那么前面的参数代表的数据就在前面。</span><br><span class="line">②当返回值为正值，那么前面的参数代表的数据就在后面。</span><br><span class="line">将数组里的数组按升序排列。（返回负值，a，b位置不变）</span><br><span class="line">` arr.sort(function(a,b) &#123;return a-b;&#125;); `</span><br><span class="line">将数组里的数按降序排列。（返回正值，a，b调换位置）</span><br><span class="line">` arr.sort(function(a,b) &#123;return b-a;&#125;); `</span><br><span class="line">将数组里的参数乱序排列</span><br><span class="line">` arr.sort(function () &#123;return Math.random() - 0.5;&#125;);</span><br><span class="line">将name的属性值，按字母从前到后排列</span><br></pre></td></tr></table></figure></p>
+<p>var arr = [<br>    {name : “a”,age : 1},<br>    {name : “b”,age : 2},<br>    {name : “c”,age : 3},<br>    {name : “d”,age : 4}<br>]<br>arr.sort(function(a,b){<br>    if(a.name &gt; b.name) {<br>        return 1;<br>    }else{<br>        return -1;<br>    }<br>})<br>（7）reverse():将数组里的参数逆转。</p>
+<h2 id="不可改变原数组的方法："><a href="#不可改变原数组的方法：" class="headerlink" title="不可改变原数组的方法："></a>不可改变原数组的方法：</h2><p>（1）concat()：A.concat(B),将B数组拼接到A数组的后面，然后返回。<br>（2）toString()：将数组变成字符串的形式。<br>（3）slice()：不传参数或者传零，返回原数组；传一个参数slice(2)，截取数组第二位及其以后的值（2前加负号，则倒数第二位）；传两位参数，slice(1,3)，从第一位开始，向后截取三位返回。<br>（4）join()：将数组以什么进行连接，返回字符串。arr.join(“,”),将数组的每一位按逗号进行连接。（默认值）。互逆的方法：split()，将字符串按括号中的字符拆分成数组。用空拆，则会单个字符作为数组的一位。</p>
+<h1 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h1><p>Math是定义的空函数，保存了很多的方法。不用new构造Math对象，这种方法叫静态方法。（静态类）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Math()&#123;&#125;</span><br><span class="line">Math.random = function() &#123;&#125;</span><br><span class="line">Math.floor = function() &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="类数组"><a href="#类数组" class="headerlink" title="类数组"></a>类数组</h1><p>（1）可以利用属性名模拟数组的特性<br>（2）可以动态的增长length属性<br>（3）如果强行让类数组调用push方法，则会根据length属性值的位置进行属性的扩充。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.push = function(target) &#123;</span><br><span class="line">    this[this.length] = target;</span><br><span class="line">    this.length ++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>假如类数组没有length值，默认为零。<br>以下代码执行两次，最后的结果是length为5.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    &quot;2&quot; : &quot;a&quot;,</span><br><span class="line">    &quot;3&quot; : &quot;b&quot;,</span><br><span class="line">    length : 3,</span><br><span class="line">    push : Array.prototype.push</span><br><span class="line">&#125;</span><br><span class="line">obj.push(&quot;c&quot;);</span><br><span class="line">obj.push(&quot;d&quot;);</span><br><span class="line">//此时访问obj为： Object&#123;2: &quot;a&quot;,3:&quot;c&quot;,4:&quot;d&quot;,length: 5&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如何将类数组转化成数组：在类数组里定义slice方法，slice：Array.prototype.slice<br>然后用类数组调用slice方法，空截取，就能将类数组转化成数组。</p>
+<h1 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h1><p>利用对象的属性名不可重复来进行去重，代码入下<br>Array.prototype.unique = function() {<br>    var obj = {},<br>        len = this.length,<br>        arr = [];<br>    for(var i = 0; i &lt; len; i ++) {<br>        if(!obj[this[i]]) {<br>            obj[this[i]] = 1;<br>            arr.push(this[i]);<br>        }<br>    }<br>    return arr;<br>}<br><code>`</code><br>obj[this[i]] = 1中的1可以为任何属性值，但不能为this[i],此时无法去除undefined，0，false，NaN的重复。</p>
 
       
     </div>
@@ -520,7 +526,7 @@
           
             <a href="/tags/JavaScript/" rel="tag"><i class = "fa fa-google"></i>JavaScript</a>
           
-            <a href="/tags/类型转化/" rel="tag"><i class = "fa fa-google"></i>类型转化</a>
+            <a href="/tags/数组/" rel="tag"><i class = "fa fa-google"></i>数组</a>
           
         </div>
       
@@ -587,8 +593,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/09/JavaScriptt运算符（二）/" rel="next" title="JavaScriptt运算符（二）">
-                <i class="fa fa-chevron-left"></i> JavaScriptt运算符（二）
+              <a href="/2018/08/12/对象的继承及枚举（九）/" rel="next" title="对象的继承及枚举（九）">
+                <i class="fa fa-chevron-left"></i> 对象的继承及枚举（九）
               </a>
             
           </div>
@@ -596,10 +602,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/09/函数（四）/" rel="prev" title="函数（四）">
-                函数（四） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -786,7 +788,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编程形式的区别"><span class="nav-number">1.</span> <span class="nav-text">编程形式的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#typeof方法（判断数据类型）"><span class="nav-number">2.</span> <span class="nav-text">typeof方法（判断数据类型）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显式类型转换"><span class="nav-number">3.</span> <span class="nav-text">显式类型转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#隐式类型转换"><span class="nav-number">4.</span> <span class="nav-text">隐式类型转换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的定义"><span class="nav-number">1.</span> <span class="nav-text">数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的读和写"><span class="nav-number">2.</span> <span class="nav-text">数组的读和写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的常用方法"><span class="nav-number">3.</span> <span class="nav-text">数组的常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可以改变原数组"><span class="nav-number">3.1.</span> <span class="nav-text">可以改变原数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不可改变原数组的方法："><span class="nav-number">3.2.</span> <span class="nav-text">不可改变原数组的方法：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">4.</span> <span class="nav-text">Math</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类数组"><span class="nav-number">5.</span> <span class="nav-text">类数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组去重"><span class="nav-number">6.</span> <span class="nav-text">数组去重</span></a></li></ol></div>
             
 
           </div>

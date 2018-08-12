@@ -115,25 +115,25 @@
 
 
 
-  <meta name="description" content="编程形式的区别（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。">
-<meta name="keywords" content="JavaScript,类型转化">
+  <meta name="description" content="this：（1）函数预编译过程中：this ==&amp;gt;window;（2）全局作用域里：this ==&amp;gt; window;（3）call和apply可以改变函数运行时this指向。（4）obj.function();对象里的方法中的函数的this指向obj。12345678var obj = &amp;#123;    age = 123,    smoke : function () &amp;#123;">
+<meta name="keywords" content="JavaScript,this">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据类型转化（三）">
-<meta property="og:url" content="http://yoursite.com/2018/08/09/数据类型转化（三）/index.html">
+<meta property="og:title" content="this指向及call，apply（八）">
+<meta property="og:url" content="http://yoursite.com/2018/08/12/this指向及call，apply（八）/index.html">
 <meta property="og:site_name" content="Mero的客栈">
-<meta property="og:description" content="编程形式的区别（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。">
+<meta property="og:description" content="this：（1）函数预编译过程中：this ==&amp;gt;window;（2）全局作用域里：this ==&amp;gt; window;（3）call和apply可以改变函数运行时this指向。（4）obj.function();对象里的方法中的函数的this指向obj。12345678var obj = &amp;#123;    age = 123,    smoke : function () &amp;#123;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-09T03:18:09.278Z">
+<meta property="og:updated_time" content="2018-08-12T06:06:09.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据类型转化（三）">
-<meta name="twitter:description" content="编程形式的区别（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。">
+<meta name="twitter:title" content="this指向及call，apply（八）">
+<meta name="twitter:description" content="this：（1）函数预编译过程中：this ==&amp;gt;window;（2）全局作用域里：this ==&amp;gt; window;（3）call和apply可以改变函数运行时this指向。（4）obj.function();对象里的方法中的函数的this指向obj。12345678var obj = &amp;#123;    age = 123,    smoke : function () &amp;#123;">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/09/数据类型转化（三）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/12/this指向及call，apply（八）/"/>
 
 
 
@@ -143,7 +143,7 @@
   };
 </script>
 
-  <title>数据类型转化（三） | Mero的客栈</title>
+  <title>this指向及call，apply（八） | Mero的客栈</title>
   
 
 
@@ -338,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/数据类型转化（三）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/this指向及call，apply（八）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mero">
@@ -355,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据类型转化（三）
+          <h1 class="post-title" itemprop="name headline">this指向及call，apply（八）
               
             
           </h1>
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2018-08-09 10:37:17 / 修改时间：11:18:09" itemprop="dateCreated datePublished" datetime="2018-08-09T10:37:17+08:00">2018-08-09</time>
+              <time title="创建时间：2018-08-12 12:37:17 / 修改时间：14:06:09" itemprop="dateCreated datePublished" datetime="2018-08-12T12:37:17+08:00">2018-08-12</time>
             
 
             
@@ -417,8 +417,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/09/数据类型转化（三）/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/09/数据类型转化（三）/" itemprop="commentCount"></span>
+                <a href="/2018/08/12/this指向及call，apply（八）/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/12/this指向及call，apply（八）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -454,10 +454,14 @@
       
 
       
-        <h1 id="编程形式的区别"><a href="#编程形式的区别" class="headerlink" title="编程形式的区别"></a>编程形式的区别</h1><p>（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，<br>（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。</p>
-<h1 id="typeof方法（判断数据类型）"><a href="#typeof方法（判断数据类型）" class="headerlink" title="typeof方法（判断数据类型）"></a>typeof方法（判断数据类型）</h1><p>（1）返回的六个数据类型：number，string，Boolean，undefined，object，function。这六种类型都是字符串的类型（字符串的number，string，Boolean，undefined，object，function）<br>（2）能够准确判断的只有：number，string，Boolean，undefined四种类型，后两种无法准确判断。例如：typeof(null) = object；判断引用值时返回的都是object。<br>（3）typeof();括号中加入传一个未经声明的变量，不报错（唯一 一个），返回undefined。</p>
-<h1 id="显式类型转换"><a href="#显式类型转换" class="headerlink" title="显式类型转换"></a>显式类型转换</h1><p>（1）var num = Number();将字符串转换成数字类型。null转成0，undefined为NaN，空串为0，false为0，true为1。无法转换的字符串为NaN。<br>（2）var num = parseInt();将字符串转换成整数类型，从数字类看到非数字类截止，转为整型返回。null，undefined，false，true转换为NaN。parseInt(“123”,16);16为基底（基底范围为2-36），将括号中的123看成16进制的数，然后转换成十进制的数。0也可以为基底，看成十进制，但有的浏览器用不了。<br>（3）var num = parseFloat();将字符串转换成小数。<br>（4）var num = String();转换成字符串。<br>（5）var num = Boolean();转换成布尔值。<br>（6）var str = ; var num = str.toString();调用toString方法。转换成字符串。null和undefined没有toString方法。括号中传数字，将str看成十进制的数，转换成括号中数字进制的值。</p>
-<h1 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h1><p>（1）isNaN();是数字返回false，不是数字返回true。<br>var num = ; var b = isNaN（num）；两段代码之间隐式调用了Number方法，转换成数字类型，在看是否和NaN相等。（NaN不等于任何值）。<br>（2）”++/–”  “+/-（一元正负）”；当有加加和减减符号时，会先隐式调用number方法，转成数字类型，不管先运算还是先执行。当+/-作为正负的符号时，调用number方法，转成number类型。<br>（3）”+”<br>①数值类型和布尔类型的相加，将布尔类型的值转为number值，再运算，结果为number类型。<br>②数字和数字相加，运算结果为数字类型。<br>③数字和字符串相加，先将加号两边转换成string类型，再进行拼接，运算结果为string类型。是拼接，而不是运算。<br>（4）”-“, “*”, “/“, “%”；将符号两侧的都变成数字类型，再进行运算，计算的结果是数字类型。<br>（5）”&amp;&amp;”, “||”, “!”；判断之前调用Boolean方法，转成布尔值进行判断。<br>（6）”&lt;” “&gt;”, “&lt;=”, “&gt;=”；当符号一侧为数字时，调用number方法，将另外一个转成数字类型，再进行比较。null和undefined无法和零进行比较，他俩相等。<br>（7）”==”, “!=”；和大于小于的规则一样。</p>
+        <h1 id="this："><a href="#this：" class="headerlink" title="this："></a>this：</h1><p>（1）函数预编译过程中：this ==&gt;window;<br>（2）全局作用域里：this ==&gt; window;<br>（3）call和apply可以改变函数运行时this指向。<br>（4）obj.function();对象里的方法中的函数的this指向obj。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    age = 123,</span><br><span class="line">    smoke : function () &#123;</span><br><span class="line">        console.log(this);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var smoke1 = obj.smoke;</span><br><span class="line">smoke1();</span><br></pre></td></tr></table></figure></p>
+<p>obj的smoke方法体给了smoke1，则此时走的预编译环节，打印的this是window。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;222&quot;;</span><br><span class="line">var a = &#123;</span><br><span class="line">    name : &quot;111&quot;,</span><br><span class="line">    say : function () &#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var fun = a.say;</span><br><span class="line">fun();//222,因为a的say方法体给了fun，走函数预编译，this指向window</span><br><span class="line">a.say();//函数执行时的this指向a对象，则打印111</span><br><span class="line">var b = &#123;</span><br><span class="line">    name : &quot;333&quot;,</span><br><span class="line">    say : function (fun) &#123;</span><br><span class="line">        fun();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">b.say(a.say);//222,将a.say的方法体拿出来在b.say当中执行，fun空执行，走预编译，指向window</span><br><span class="line">b.say = a.say;</span><br><span class="line">b.say();//333,b.say的this指向的b对象</span><br></pre></td></tr></table></figure>
+<h1 id="call：函数执行时的this指向问题"><a href="#call：函数执行时的this指向问题" class="headerlink" title="call：函数执行时的this指向问题"></a>call：函数执行时的this指向问题</h1><p>当函数执行时，person()和person.call()完全等价，当函数执行时，系统也会隐式的换成person.call()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function Person(name, age) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Person.call(obj,&quot;Mero&quot;,123);</span><br></pre></td></tr></table></figure></p>
+<p>person.call()括号中的传参，第一位参数将person中的this指向obj对象（类似于obj替换person里面的this）第二位参数为第一位形参对应的形参，以此类推。</p>
+<h1 id="apply：函数执行时的this指向问题"><a href="#apply：函数执行时的this指向问题" class="headerlink" title="apply：函数执行时的this指向问题"></a>apply：函数执行时的this指向问题</h1><p>和call的作用相同，区别在于传参的形式不一样。例如以上代码的传参用apply表示为<code>person.apply(obj,[&#39;Mero&#39;,123]);</code> 第一位参数为this的指向，第二位及以后代表形参对应的实参，需要用[]包裹，数组的形式。开发过程中apply用的比较多，原因是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person(name, age)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;    </span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line">function test()&#123;</span><br><span class="line">    Person.apply(obj,arguments);</span><br><span class="line">&#125;</span><br><span class="line">test(&apos;Mero&apos;,123);//用person操作obj，test传参，但没有形参，此时用apply，直接将实参列表arguments传入。</span><br></pre></td></tr></table></figure></p>
+<h1 id="call和apply的使用"><a href="#call和apply的使用" class="headerlink" title="call和apply的使用"></a>call和apply的使用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function PublicPerson(name, age, sex) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">    this.sex = sex;</span><br><span class="line">    //this.xxx = (function()&#123;</span><br><span class="line">    //  这是一个非常复杂的操作</span><br><span class="line">    //&#125;())</span><br><span class="line">&#125;</span><br><span class="line">function Person(name, age, sex, aihao) &#123;</span><br><span class="line">    //var this = Object.create(Person.prototype);</span><br><span class="line">    PublicPerson.call(this, name, age, sex);</span><br><span class="line">    this.aihao = aihao;</span><br><span class="line">&#125;</span><br><span class="line">var person = new Person(&apos;xiaozhang&apos;,123,&apos;female&apos;,&apos;undefined&apos;);</span><br></pre></td></tr></table></figure>
+<p>person里想有publicperson里的属性，用call，传的第一个this是person里的this，将publicperson里的this进行替换，使得相似的公有属性能够用别人的。个性化的东西自己传。<br>注意：bind也能改变this的指向，但是当用bind改变this指向之后，无法在次进行改变。</p>
 
       
     </div>
@@ -520,7 +524,7 @@
           
             <a href="/tags/JavaScript/" rel="tag"><i class = "fa fa-google"></i>JavaScript</a>
           
-            <a href="/tags/类型转化/" rel="tag"><i class = "fa fa-google"></i>类型转化</a>
+            <a href="/tags/this/" rel="tag"><i class = "fa fa-google"></i>this</a>
           
         </div>
       
@@ -587,8 +591,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/09/JavaScriptt运算符（二）/" rel="next" title="JavaScriptt运算符（二）">
-                <i class="fa fa-chevron-left"></i> JavaScriptt运算符（二）
+              <a href="/2018/08/10/对象的原型（七）/" rel="next" title="对象的原型（七）">
+                <i class="fa fa-chevron-left"></i> 对象的原型（七）
               </a>
             
           </div>
@@ -597,8 +601,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/09/函数（四）/" rel="prev" title="函数（四）">
-                函数（四） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/12/对象的继承及枚举（九）/" rel="prev" title="对象的继承及枚举（九）">
+                对象的继承及枚举（九） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -786,7 +790,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编程形式的区别"><span class="nav-number">1.</span> <span class="nav-text">编程形式的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#typeof方法（判断数据类型）"><span class="nav-number">2.</span> <span class="nav-text">typeof方法（判断数据类型）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显式类型转换"><span class="nav-number">3.</span> <span class="nav-text">显式类型转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#隐式类型转换"><span class="nav-number">4.</span> <span class="nav-text">隐式类型转换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#this："><span class="nav-number">1.</span> <span class="nav-text">this：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#call：函数执行时的this指向问题"><span class="nav-number">2.</span> <span class="nav-text">call：函数执行时的this指向问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apply：函数执行时的this指向问题"><span class="nav-number">3.</span> <span class="nav-text">apply：函数执行时的this指向问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#call和apply的使用"><span class="nav-number">4.</span> <span class="nav-text">call和apply的使用</span></a></li></ol></div>
             
 
           </div>

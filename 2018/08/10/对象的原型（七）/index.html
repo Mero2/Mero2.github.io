@@ -115,25 +115,25 @@
 
 
 
-  <meta name="description" content="编程形式的区别（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。">
-<meta name="keywords" content="JavaScript,类型转化">
+  <meta name="description" content="原型的定义原型是function对象的一个属性，它定义了构造函数制造出的对象的公共祖先。通过该构造函数产生的对象，可以继承该原型的属性和方法。原型也是对象。 理解（1）即为函数定义之后：function Person(){  },其自带了一个属性，person.prototype = { constructor : Person;}(相当于空对象）constructor构造器。Person.pro">
+<meta name="keywords" content="JavaScript,对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据类型转化（三）">
-<meta property="og:url" content="http://yoursite.com/2018/08/09/数据类型转化（三）/index.html">
+<meta property="og:title" content="对象的原型（七）">
+<meta property="og:url" content="http://yoursite.com/2018/08/10/对象的原型（七）/index.html">
 <meta property="og:site_name" content="Mero的客栈">
-<meta property="og:description" content="编程形式的区别（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。">
+<meta property="og:description" content="原型的定义原型是function对象的一个属性，它定义了构造函数制造出的对象的公共祖先。通过该构造函数产生的对象，可以继承该原型的属性和方法。原型也是对象。 理解（1）即为函数定义之后：function Person(){  },其自带了一个属性，person.prototype = { constructor : Person;}(相当于空对象）constructor构造器。Person.pro">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-09T03:18:09.278Z">
+<meta property="og:updated_time" content="2018-08-10T07:26:28.738Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据类型转化（三）">
-<meta name="twitter:description" content="编程形式的区别（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。">
+<meta name="twitter:title" content="对象的原型（七）">
+<meta name="twitter:description" content="原型的定义原型是function对象的一个属性，它定义了构造函数制造出的对象的公共祖先。通过该构造函数产生的对象，可以继承该原型的属性和方法。原型也是对象。 理解（1）即为函数定义之后：function Person(){  },其自带了一个属性，person.prototype = { constructor : Person;}(相当于空对象）constructor构造器。Person.pro">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/09/数据类型转化（三）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/10/对象的原型（七）/"/>
 
 
 
@@ -143,7 +143,7 @@
   };
 </script>
 
-  <title>数据类型转化（三） | Mero的客栈</title>
+  <title>对象的原型（七） | Mero的客栈</title>
   
 
 
@@ -338,7 +338,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/数据类型转化（三）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/对象的原型（七）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mero">
@@ -355,7 +355,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据类型转化（三）
+          <h1 class="post-title" itemprop="name headline">对象的原型（七）
               
             
           </h1>
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="创建时间：2018-08-09 10:37:17 / 修改时间：11:18:09" itemprop="dateCreated datePublished" datetime="2018-08-09T10:37:17+08:00">2018-08-09</time>
+              <time title="创建时间：2018-08-10 14:43:43 / 修改时间：15:26:28" itemprop="dateCreated datePublished" datetime="2018-08-10T14:43:43+08:00">2018-08-10</time>
             
 
             
@@ -417,8 +417,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/09/数据类型转化（三）/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/09/数据类型转化（三）/" itemprop="commentCount"></span>
+                <a href="/2018/08/10/对象的原型（七）/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/10/对象的原型（七）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -454,10 +454,17 @@
       
 
       
-        <h1 id="编程形式的区别"><a href="#编程形式的区别" class="headerlink" title="编程形式的区别"></a>编程形式的区别</h1><p>（1）面向过程：以事件为中心的编程思想。就是分析出解决问题所需要的步骤，然后用函数把这些步骤一步一步实现，使用的时候一个一个依次调用就可以了。典型的就是：C语言，<br>（2）面向对象：把构成问题事务分解成各个对象，建立对象的目的不是为了完成一个步骤，而是为了描叙某个事物在整个解决问题的步骤中的行为。比如：JAVA ，Delphi，C#这些都是，而JavaScript既面向过程又面向对象。</p>
-<h1 id="typeof方法（判断数据类型）"><a href="#typeof方法（判断数据类型）" class="headerlink" title="typeof方法（判断数据类型）"></a>typeof方法（判断数据类型）</h1><p>（1）返回的六个数据类型：number，string，Boolean，undefined，object，function。这六种类型都是字符串的类型（字符串的number，string，Boolean，undefined，object，function）<br>（2）能够准确判断的只有：number，string，Boolean，undefined四种类型，后两种无法准确判断。例如：typeof(null) = object；判断引用值时返回的都是object。<br>（3）typeof();括号中加入传一个未经声明的变量，不报错（唯一 一个），返回undefined。</p>
-<h1 id="显式类型转换"><a href="#显式类型转换" class="headerlink" title="显式类型转换"></a>显式类型转换</h1><p>（1）var num = Number();将字符串转换成数字类型。null转成0，undefined为NaN，空串为0，false为0，true为1。无法转换的字符串为NaN。<br>（2）var num = parseInt();将字符串转换成整数类型，从数字类看到非数字类截止，转为整型返回。null，undefined，false，true转换为NaN。parseInt(“123”,16);16为基底（基底范围为2-36），将括号中的123看成16进制的数，然后转换成十进制的数。0也可以为基底，看成十进制，但有的浏览器用不了。<br>（3）var num = parseFloat();将字符串转换成小数。<br>（4）var num = String();转换成字符串。<br>（5）var num = Boolean();转换成布尔值。<br>（6）var str = ; var num = str.toString();调用toString方法。转换成字符串。null和undefined没有toString方法。括号中传数字，将str看成十进制的数，转换成括号中数字进制的值。</p>
-<h1 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h1><p>（1）isNaN();是数字返回false，不是数字返回true。<br>var num = ; var b = isNaN（num）；两段代码之间隐式调用了Number方法，转换成数字类型，在看是否和NaN相等。（NaN不等于任何值）。<br>（2）”++/–”  “+/-（一元正负）”；当有加加和减减符号时，会先隐式调用number方法，转成数字类型，不管先运算还是先执行。当+/-作为正负的符号时，调用number方法，转成number类型。<br>（3）”+”<br>①数值类型和布尔类型的相加，将布尔类型的值转为number值，再运算，结果为number类型。<br>②数字和数字相加，运算结果为数字类型。<br>③数字和字符串相加，先将加号两边转换成string类型，再进行拼接，运算结果为string类型。是拼接，而不是运算。<br>（4）”-“, “*”, “/“, “%”；将符号两侧的都变成数字类型，再进行运算，计算的结果是数字类型。<br>（5）”&amp;&amp;”, “||”, “!”；判断之前调用Boolean方法，转成布尔值进行判断。<br>（6）”&lt;” “&gt;”, “&lt;=”, “&gt;=”；当符号一侧为数字时，调用number方法，将另外一个转成数字类型，再进行比较。null和undefined无法和零进行比较，他俩相等。<br>（7）”==”, “!=”；和大于小于的规则一样。</p>
+        <h1 id="原型的定义"><a href="#原型的定义" class="headerlink" title="原型的定义"></a>原型的定义</h1><p>原型是function对象的一个属性，它定义了构造函数制造出的对象的公共祖先。通过该构造函数产生的对象，可以继承该原型的属性和方法。原型也是对象。</p>
+<h1 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h1><p>（1）即为函数定义之后：function Person(){  },其自带了一个属性，<br>person.prototype = { constructor : Person;}(相当于空对象）constructor构造器。<br>Person.prototype.name = “Mero”；var person1= new Person();<br>此时，person1仍然是一个空对象，但访问person1.name有值为Mero。拿的是构造器的name值。相当于父级的name属性值。<br>通过原型增加属性，通过构造函数的方法，构造对象，能继承原型的属性（原型作为公有祖先）<br>例如以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.name = &quot;mero&quot;;</span><br><span class="line">Person.prototype.age = 20;</span><br><span class="line">function Person () &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person();</span><br><span class="line">var person2 = new Person();</span><br></pre></td></tr></table></figure></p>
+<p>两次new构造的两个对象，都继承原型的值，即访问person1.name和person2.name的值一样</p>
+<h1 id="原型上的查找"><a href="#原型上的查找" class="headerlink" title="原型上的查找"></a>原型上的查找</h1><p>在原型上的属性和方法只能查，无法进行改和删。但是不绝对，某种情况下能改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.card = [100,100,200];</span><br><span class="line">funtion Peroson()&#123;&#125;</span><br><span class="line">var person1 = new Person();</span><br><span class="line">var person2 = new Person();</span><br><span class="line">person1.card  //[100,100,200]</span><br><span class="line">person1.card.push(100);</span><br><span class="line">person1.card //[100,100,200,100];</span><br><span class="line">//此时是调用card数组自己的方法给自己添加值，能够修改（调用引用值的方法修改自己）</span><br></pre></td></tr></table></figure></p>
+<h1 id="原型的用法"><a href="#原型的用法" class="headerlink" title="原型的用法"></a>原型的用法</h1><p>提取公有属性，将耦合（需要反复执行的代码叫耦合）代码放到原型里面去。<br>原型只执行一次，可以将非个性化的属性放入原型中，避免每次构造对象时重复执行某段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Car.prototype = &#123;</span><br><span class="line">    height : 199,</span><br><span class="line">    width : 100</span><br><span class="line">&#125;</span><br><span class="line">function Car(color) &#123;</span><br><span class="line">    this.color = color;</span><br><span class="line">&#125;</span><br><span class="line">var car1 = new Car(&apos;green&apos;);</span><br><span class="line">var car2 = new Car(&apos;red&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>构造函数本身有一个prototype属性，值是一个空对象，以上的给原型上添加属性的方法是将原有的空对象进行替换，而用car.prototype.height = 199;是通过原有的对象上添加自己的属性，两种方法不一样。</p>
+<h1 id="对象如何查看原型"><a href="#对象如何查看原型" class="headerlink" title="对象如何查看原型"></a>对象如何查看原型</h1><p>构造函数new之后产生的this对象，有一个<strong>proto</strong>属性（隐式属性），值为obj.prototype;访问属性时，先找自己的属性，没有，再访问原型上的属性。</p>
+<h1 id="如何查看对象的构造函数"><a href="#如何查看对象的构造函数" class="headerlink" title="如何查看对象的构造函数"></a>如何查看对象的构造函数</h1><p>constructor构造器；即对象由哪个函数构造而来。每个对象都有一个constructor属性，其值为它的构造函数。<br>直接以对象字面量构造对象：var obj = {  };他会有一个<strong>proto</strong>属性，值为function Object(){  };<br>直接给出一个对象，Car.prototype = {  };内部无constructor，只能由原型链向上查找，查找object.prototype上的constructor，值为function object(){  }；<br>手动在Car.prototype = {constroctor:Car};手动设置构造函数。<br>但凡是对象，都有其原型，Object.prototype 为终点，其无<strong>proto</strong>属性。</p>
+<h1 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h1><p>（1）构成原型链<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GrandFoo.prototype.lastName = &quot;ji&quot;;</span><br><span class="line">function GrandFoo() &#123;&#125;</span><br><span class="line">var grandFoo = new GrandFoo();</span><br><span class="line">Foo.prototype = grandFoo;</span><br><span class="line">function Foo() &#123;</span><br><span class="line">    this.money = 100;</span><br><span class="line">&#125;</span><br><span class="line">var foo = new Foo();</span><br><span class="line">Son.prototype = foo;</span><br><span class="line">function Son() &#123;</span><br><span class="line">    this.age = 18;</span><br><span class="line">&#125;</span><br><span class="line">var son = new Son();</span><br><span class="line">son.abc = &apos;abc&apos;;</span><br><span class="line">son.money = &apos;200&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>设置构造函数的prototype为其原型的对象，而GrandFoo.prototype.lastName是在GrandFoo的原型上添加属性。原型链上的属性只能查（属性赋值无法改变，除非调用引用值自己的方法改变）。访问时由下往上访问，终点是Object.prototype。<br>（2）var obj = Object.create(Object.prototype);括号中填原型，则构造出一个对象，和new Object 如出一辙。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;</span><br><span class="line">    name : &quot;abc&quot;,</span><br><span class="line">    age : 123</span><br><span class="line">&#125;</span><br><span class="line">var obj = Object.create(a);</span><br></pre></td></tr></table></figure></p>
+<p>括号中填写了一个a对象，此方法括号中可以直接填一个对象，充当obj对象的原型，当填原始值时，报错，非对象的值都报错，null除外；<br>var obj = Object.create(null);没有父级原型。此时访问obj，显示的是：Object{ No Properties}<br>但仍然可以添加属性，无法通过原型链访问不属于他的属性，无<strong>proto</strong>属性。属于无原型对象。<br>当使用document.write(object);打印对象时，隐式执行object.toString();方法，如果该对象没有toString方法，访问原型上的toString，返回[object Object];  采用create（null）的方法构造对象时，无toString方法，无原型链，所以无法调用toString，此时报错。<br>绝大多数对象的最终都会继承自Object.prototype，但并不是所有，除Object.create(null);无原型。</p>
 
       
     </div>
@@ -520,7 +527,7 @@
           
             <a href="/tags/JavaScript/" rel="tag"><i class = "fa fa-google"></i>JavaScript</a>
           
-            <a href="/tags/类型转化/" rel="tag"><i class = "fa fa-google"></i>类型转化</a>
+            <a href="/tags/对象/" rel="tag"><i class = "fa fa-google"></i>对象</a>
           
         </div>
       
@@ -587,8 +594,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/09/JavaScriptt运算符（二）/" rel="next" title="JavaScriptt运算符（二）">
-                <i class="fa fa-chevron-left"></i> JavaScriptt运算符（二）
+              <a href="/2018/08/10/对象及包装类（六）/" rel="next" title="对象及包装类">
+                <i class="fa fa-chevron-left"></i> 对象及包装类
               </a>
             
           </div>
@@ -597,8 +604,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/09/函数（四）/" rel="prev" title="函数（四）">
-                函数（四） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/12/this指向及call，apply（八）/" rel="prev" title="this指向及call，apply（八）">
+                this指向及call，apply（八） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -786,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编程形式的区别"><span class="nav-number">1.</span> <span class="nav-text">编程形式的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#typeof方法（判断数据类型）"><span class="nav-number">2.</span> <span class="nav-text">typeof方法（判断数据类型）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显式类型转换"><span class="nav-number">3.</span> <span class="nav-text">显式类型转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#隐式类型转换"><span class="nav-number">4.</span> <span class="nav-text">隐式类型转换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原型的定义"><span class="nav-number">1.</span> <span class="nav-text">原型的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解"><span class="nav-number">2.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型上的查找"><span class="nav-number">3.</span> <span class="nav-text">原型上的查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型的用法"><span class="nav-number">4.</span> <span class="nav-text">原型的用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象如何查看原型"><span class="nav-number">5.</span> <span class="nav-text">对象如何查看原型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何查看对象的构造函数"><span class="nav-number">6.</span> <span class="nav-text">如何查看对象的构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型链"><span class="nav-number">7.</span> <span class="nav-text">原型链</span></a></li></ol></div>
             
 
           </div>
