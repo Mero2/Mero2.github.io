@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-corner-indicator.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="正则表达式的作用匹配特殊字符或者有特殊搭配原则的字符的最佳选择，比如用户名或者密码的格式进行输入限制。 转义字符（1）转义字符 “\” ：当字符串中存在不符合格式的文本，但又要进行显示时，用转义字符，比如当字符串中间有一个引号时，无法进行识别，要报错，此时在引号的前面加转义字符就能实现你的想法。\ + 特定字符代表不同的功能，\t 代表tab键，\r代表行结束符，\n代表换行。（2）多行字符串：当">
+<meta name="keywords" content="JavaScript,正则">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式（十七）">
+<meta property="og:url" content="http://yoursite.com/2018/08/18/正则表达式（十七）/index.html">
+<meta property="og:site_name" content="Mero的客栈">
+<meta property="og:description" content="正则表达式的作用匹配特殊字符或者有特殊搭配原则的字符的最佳选择，比如用户名或者密码的格式进行输入限制。 转义字符（1）转义字符 “\” ：当字符串中存在不符合格式的文本，但又要进行显示时，用转义字符，比如当字符串中间有一个引号时，无法进行识别，要报错，此时在引号的前面加转义字符就能实现你的想法。\ + 特定字符代表不同的功能，\t 代表tab键，\r代表行结束符，\n代表换行。（2）多行字符串：当">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-18T03:45:37.719Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式（十七）">
+<meta name="twitter:description" content="正则表达式的作用匹配特殊字符或者有特殊搭配原则的字符的最佳选择，比如用户名或者密码的格式进行输入限制。 转义字符（1）转义字符 “\” ：当字符串中存在不符合格式的文本，但又要进行显示时，用转义字符，比如当字符串中间有一个引号时，无法进行识别，要报错，此时在引号的前面加转义字符就能实现你的想法。\ + 特定字符代表不同的功能，\t 代表tab键，\r代表行结束符，\n代表换行。（2）多行字符串：当">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/18/正则表达式（十七）/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>正则表达式（十七） | Mero的客栈</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Mero2">
+      <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub">
+    </a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mero的客栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/正则表达式（十七）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mero">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mero的客栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">正则表达式（十七）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-18 10:40:06 / 修改时间：11:45:37" itemprop="dateCreated datePublished" datetime="2018-08-18T10:40:06+08:00">2018-08-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习笔记/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/18/正则表达式（十七）/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/18/正则表达式（十七）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="正则表达式的作用"><a href="#正则表达式的作用" class="headerlink" title="正则表达式的作用"></a>正则表达式的作用</h1><p>匹配特殊字符或者有特殊搭配原则的字符的最佳选择，比如用户名或者密码的格式进行输入限制。</p>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><p>（1）转义字符 “\” ：当字符串中存在不符合格式的文本，但又要进行显示时，用转义字符，比如当字符串中间有一个引号时，无法进行识别，要报错，此时在引号的前面加转义字符就能实现你的想法。\ + 特定字符代表不同的功能，\t 代表tab键，\r代表行结束符，\n代表换行。<br>（2）多行字符串：当写的字符串需要在引号内进行换行时，在每行的末尾加上转义字符。才符合格式规定。</p>
+<h1 id="创建正则表达式的方法"><a href="#创建正则表达式的方法" class="headerlink" title="创建正则表达式的方法"></a>创建正则表达式的方法</h1><p>（1）对象直接量的方式进行创建：var reg1 = /abc/; 匹配字符串中是否含有abc的片段。<br>（2）正则表达式也是一个对象，var reg = new RegExp(“abc”);匹配字符串中是否含有abc的片段。<br>如果不用new运算符，而是将RegExp()作为函数调用，那么它的行为与用new运算符调用时一样。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var reg = /abc/;</span><br><span class="line">var reg1 = RegExp(reg);</span><br></pre></td></tr></table></figure></p>
+<p>但是当reg改变时，reg1也会改变，拿到的只是reg的引用。</p>
+<h1 id="正则的三个修饰符"><a href="#正则的三个修饰符" class="headerlink" title="正则的三个修饰符"></a>正则的三个修饰符</h1><p>（1）i：执行对大小写不敏感的匹配（ignore不区分大小写）<br>（2）g：执行全局匹配（global查找所有的匹配项而非找到第一个匹配项后停止）<br>（3）m：执行多行匹配（multiple当字符串中有\n换行时，匹配以什么开头和以什么结尾时，这时看成两行的字符串的形式）</p>
+<h1 id="常用的正则匹配"><a href="#常用的正则匹配" class="headerlink" title="常用的正则匹配"></a>常用的正则匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[abc]                //查找发括号之间的任意字符</span><br><span class="line">[^abc]               //查找任何不在方括号之间的字符</span><br><span class="line">[0-9]                //查找任何从0-9的数字</span><br><span class="line">[a-z]                //查找任何从小写a到小写z的字符</span><br><span class="line">[A-Z]                //查找任何从大写A到大写Z的字符</span><br><span class="line">[A-z]                //查找任何从大写A到小写z的字符</span><br><span class="line">[adgk]               //查找给定集合内的任意字符</span><br><span class="line">[^adgk]              //查找给定集合外的任意字符</span><br><span class="line">(red|blue|green)     //查找任意指定的选项</span><br></pre></td></tr></table></figure>
+<p>单独的括号没什么意义，中间的竖线是或者的意思，括号也是一种运算，var reg = /(abc|bcd)d/g：代表在全局匹配字符abcd或者bcdd。<br><code>var str = &quot;bb&quot;;var reg = /(\w)\1;</code><br>此处的括号代表一个字表达式，后面的\1代表引用第一个子表达式匹配到的内容，此段代码最终匹配到的是两个相同字符相连。</p>
+<h1 id="正则表达式的方法"><a href="#正则表达式的方法" class="headerlink" title="正则表达式的方法"></a>正则表达式的方法</h1><p>（1）查看匹配的字符：var str = “字符”；var reg = /正则表达式/；str.match(reg);查看匹配到的str里的字符。<br>（2）看是否匹配到字符：var str = “字符”；var reg = /正则表达式/；reg.text(str);<br>（3）compile：编译正则表达式。<br>（4）exec：检索字符串中指定的值，返回找到的值，并确定其位置。和match不加g的时候的返回值相同，但这种方法加g之后多次执行，第二次执行是在第一次的基础上继续向下查找。查找是一个循环。第三次查找，游标处于字符的最后面，第四次查找是，游标又处于第一位。再次从第一位进行查找。</p>
+<h1 id="支持正则表达式的String对象的方法"><a href="#支持正则表达式的String对象的方法" class="headerlink" title="支持正则表达式的String对象的方法"></a>支持正则表达式的String对象的方法</h1><p>（1）search：检索与正则表达式相匹配的值。str.search();括号中可以填需要查找的字符或者用正则表达式匹配的字符。返回要找的字符在str中的索引位。<br>（2）match：找到一个或多个正则表达式的匹配。match返回的是一个类数组，第一位是匹配到的字符，第二位是正则的第一个子表达式匹配到的字符，第三位是第二个子表达式的内容，index：3，是正则匹配到的在源字符上的位置，input位上的是源字符。执行全局匹配时返回的值只有匹配到的值。<br>（3）replace：替换与正则表达式匹配的子串。字符串在进行相互替换时，只能找到一个需要替换的字符，无法进行全局的字符进行替换。<br>①此段代码的作用是打印出ab字符的逆转。$2,$1代表第二个和第一个子表达式匹配的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;ab&quot;;</span><br><span class="line">var reg = /(\w)(\w)/g;</span><br><span class="line">console.log(str.replace(reg,&quot;$2$1&quot;))</span><br></pre></td></tr></table></figure></p>
+<p>②除此之外，replace的第二位参数还可以填一个函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;the-first-name&quot;;</span><br><span class="line">var reg = /-(\w)/g;</span><br><span class="line">cosole.log(str.replace(reg,function($1,$2)&#123;</span><br><span class="line">    return $1.toUpperCase();</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>函数中的第一位形参代表正则表达式匹配到的内容，第二个代表第一个子表达式，以此类推，关注函数的返回结果。字符串有个toUpperCase方法，是将字符串变为大写。<br>（4）split：把字符串分割为字符串数组。将字符串按照括号中匹配到的字符进行分割。</p>
+<h1 id="正则表达式的元字符"><a href="#正则表达式的元字符" class="headerlink" title="正则表达式的元字符"></a>正则表达式的元字符</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">（1）\w        //查找单词字符，A - z，0-9，即所有的大小写英文字母和单个数字。</span><br><span class="line">（2）\W        //查找非单词字符，即非以上所述的字符。</span><br><span class="line">（3）\d        //查找数字字符，0-9。</span><br><span class="line">（4）\D        //查找非数字字符。</span><br><span class="line">（5）\s        //查找空白字符。空白字符包括：空格符，制表符\t，回车符\r，换行符\n，垂直换行符\v、换页符\f。</span><br><span class="line">（6）\S        //查找非空白字符</span><br><span class="line">（7）\b        //匹配单词边界，var reg = /\babc\B/;在进行匹配的字符串中abc的左边儿是单词边界，右边儿是非单词边界。</span><br><span class="line">（8）\B        //匹配非单词边界</span><br><span class="line">（9）\xxx      //查找以八进制数xxx规定的字符。即每个八进制的数代表一个字符。</span><br><span class="line">（10）\xdd     //查找以十六进制数dd规定的字符</span><br><span class="line">（11）\uxxxx   //查找以十六进制数xxxx规定的Unicode字符。</span><br><span class="line">（12）.        //查找单个字符，除了换行和行结束符。</span><br></pre></td></tr></table></figure>
+<h1 id="正则表达式的量词（贪心匹配，拿到最多的片段）"><a href="#正则表达式的量词（贪心匹配，拿到最多的片段）" class="headerlink" title="正则表达式的量词（贪心匹配，拿到最多的片段）"></a>正则表达式的量词（贪心匹配，拿到最多的片段）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">n+        //匹配任何包含至少一个n的字符串</span><br><span class="line">n*        //匹配任何包含零个或多个n的字符串</span><br><span class="line">n?        //匹配任何包含零个或一个n的字符串</span><br><span class="line">n&#123;X&#125;      //匹配包含X个n的序列的字符串</span><br><span class="line">n&#123;X,Y&#125;    //匹配包含X或Y个n的序列的字符串</span><br><span class="line">n&#123;X,&#125;     //匹配包含至少X个n的序列的字符串</span><br><span class="line">n$        //匹配任何结尾为n的字符串</span><br><span class="line">^n        //匹配任何开头为n的字符串</span><br><span class="line">?=n       //匹配任何其后紧接指定字符串n的字符串</span><br><span class="line">?!n       //匹配任何其后灭有紧接指定字符串n的字符串</span><br></pre></td></tr></table></figure>
+<p>①打破贪心匹配的方法：加问号 n+?最多匹配一个，n*?最多匹配一个。n??能取零绝对不取一个。<br>②var reg  = /^abc$/g;以abc开头并且以abc结尾的字符。此处限定只能是abc。<br>var reg = /^(abc|bcd)$/g;此处限定了匹配字符只能是abc或者bcd。<br>③?:的作用：reg = /^(?:b|c)\1/g;此时的\1不代表第一个子表达式，?:相当于将该括号中不看作一个子表达式。<br>④?=x，正向预查：要匹配的字符串，后面必须紧跟着x字符。reg = /cainiao(?=8)/g。匹配到的菜鸟字符后面必须紧跟数字8。<br>⑤?!,非正向预查：要匹配的字符串，后面不能紧跟着某个字符。</p>
+<h1 id="正则表达式对象的属性"><a href="#正则表达式对象的属性" class="headerlink" title="正则表达式对象的属性"></a>正则表达式对象的属性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">global          //RegExp对象是否具有标志g</span><br><span class="line">ignoreCase      //RegExp对象是否具有标志i</span><br><span class="line">lastIndex       //一个整数，标志开始下一次匹配的字符位置</span><br><span class="line">multiline       //RegExp对象是否具有标志m</span><br><span class="line">source          //正则表达式源文本</span><br></pre></td></tr></table></figure>
+<p>lastIndex：游标进行下次查找时所处的位置。可以自己先改动lastIndex的值，让查找的开始为不是零。exec方法全局匹配下的lastIndex的值会改变。不是全局匹配下的lastIndex的值每次查找后都会置零。</p>
+<h1 id="字符的注意点"><a href="#字符的注意点" class="headerlink" title="$字符的注意点"></a>$字符的注意点</h1><p>在替换文本中，$有了特殊含义，即代表说匹配到的字符串，$1代表第一个子表达式，所以如果我们想用$这个字符的话，需要写成$$，此时前一个$符成了转义符号。匹配问号时，需要进行转义。</p>
+<h1 id="实现字符串的去重"><a href="#实现字符串的去重" class="headerlink" title="实现字符串的去重"></a>实现字符串的去重</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = aaaaabbbbbccccddd;</span><br><span class="line">var reg = /(\w)\1+/g;</span><br><span class="line">console.log(str.replace(reg,&quot;$1&quot;));</span><br></pre></td></tr></table></figure>
+<h1 id="实现数字的三位一打点"><a href="#实现数字的三位一打点" class="headerlink" title="实现数字的三位一打点"></a>实现数字的三位一打点</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;100000000&quot;;</span><br><span class="line">var reg = /(?=(\B)(\d&#123;3&#125;)+$/g;</span><br><span class="line">console.log(str.replace(reg,&quot;.&quot;))</span><br></pre></td></tr></table></figure>
+<h1 id="输入框密码的正则匹配应用"><a href="#输入框密码的正则匹配应用" class="headerlink" title="输入框密码的正则匹配应用"></a>输入框密码的正则匹配应用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type = &quot;password&quot; style = &quot;border:1px solid black&quot;&gt;</span><br><span class="line">&lt;span style = &quot;display:none;color:#f40;font-size:12px;&quot;&gt;your password is not correct!&lt;/span&gt;</span><br><span class="line">&lt;script type = &quot;text/javascript&quot;&gt;</span><br><span class="line">    var input = document.getElementsByTagName(&apos;input&apos;)[0];</span><br><span class="line">    var span = document.getElementsByTagName(&apos;span&apos;)[0];</span><br><span class="line">    input.onchange = function() &#123;</span><br><span class="line">        var str = input.value;</span><br><span class="line">        var reg = /^[0-9A-z]&#123;6,18)$/g;</span><br><span class="line">        if(!reg.test(str)) &#123;</span><br><span class="line">            span.style.display = &quot;block&quot;;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            console.log(&apos;smart people&apos;);</span><br><span class="line">            span.style.display = &quot;none&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>客官可以试试以下按钮</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Mero 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Mero 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class = "fa fa-google"></i>JavaScript</a>
+          
+            <a href="/tags/正则/" rel="tag"><i class = "fa fa-google"></i>正则</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+               <div>
+                 
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+               </div>
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/15/JavaScript加载（十六）/" rel="next" title="JavaScript加载（十六）">
+                <i class="fa fa-chevron-left"></i> JavaScript加载（十六）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/18/BOM（十八）/" rel="prev" title="BOM（十八）">
+                BOM（十八） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog.jpg"
+                alt="Mero" />
+            
+              <p class="site-author-name" itemprop="name">Mero</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Mero2" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/Mero2017" target="_blank" title="weibo"><i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式的作用"><span class="nav-number">1.</span> <span class="nav-text">正则表达式的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转义字符"><span class="nav-number">2.</span> <span class="nav-text">转义字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建正则表达式的方法"><span class="nav-number">3.</span> <span class="nav-text">创建正则表达式的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则的三个修饰符"><span class="nav-number">4.</span> <span class="nav-text">正则的三个修饰符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的正则匹配"><span class="nav-number">5.</span> <span class="nav-text">常用的正则匹配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式的方法"><span class="nav-number">6.</span> <span class="nav-text">正则表达式的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支持正则表达式的String对象的方法"><span class="nav-number">7.</span> <span class="nav-text">支持正则表达式的String对象的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式的元字符"><span class="nav-number">8.</span> <span class="nav-text">正则表达式的元字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式的量词（贪心匹配，拿到最多的片段）"><span class="nav-number">9.</span> <span class="nav-text">正则表达式的量词（贪心匹配，拿到最多的片段）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则表达式对象的属性"><span class="nav-number">10.</span> <span class="nav-text">正则表达式对象的属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符的注意点"><span class="nav-number">11.</span> <span class="nav-text">$字符的注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现字符串的去重"><span class="nav-number">12.</span> <span class="nav-text">实现字符串的去重</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现数字的三位一打点"><span class="nav-number">13.</span> <span class="nav-text">实现数字的三位一打点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入框密码的正则匹配应用"><span class="nav-number">14.</span> <span class="nav-text">输入框密码的正则匹配应用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mero</span>
+
+  
+
+  
+</div>
+
+
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'rNNcV5cqFn3XIP4b8KgzrG4f-gzGzoHsz',
+        appKey: 'qcw3iuD0qB2kwLgV86v42rzT',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+</body>
+</html>
