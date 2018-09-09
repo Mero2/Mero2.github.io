@@ -115,14 +115,18 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="GET和POST的区别（1）GET请求在浏览器回退时是无害的，而POST会再次提交。（2）GET请求会被浏览器主动缓存，而POST不会。（3）GET请求参数会被完整的保留到浏览器的历史记录中。（4）GET用URL传参，有长度限制，POST放在request.body上，无长度限制。 用GET的场景GET请求一般不会产生副作用，就是说，它仅仅是获取资源信息，就像数据库查询一样，不会修改，增加数据，不">
+<meta name="keywords" content="-JavaScript -请求方法">
+<meta property="og:type" content="article">
 <meta property="og:title" content="get和post的区别及使用场景">
 <meta property="og:url" content="http://yoursite.com/2018/09/09/get和post的区别及使用场景/index.html">
 <meta property="og:site_name" content="Mero的客栈">
+<meta property="og:description" content="GET和POST的区别（1）GET请求在浏览器回退时是无害的，而POST会再次提交。（2）GET请求会被浏览器主动缓存，而POST不会。（3）GET请求参数会被完整的保留到浏览器的历史记录中。（4）GET用URL传参，有长度限制，POST放在request.body上，无长度限制。 用GET的场景GET请求一般不会产生副作用，就是说，它仅仅是获取资源信息，就像数据库查询一样，不会修改，增加数据，不">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-09T02:53:01.445Z">
+<meta property="og:updated_time" content="2018-09-09T07:51:33.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="get和post的区别及使用场景">
+<meta name="twitter:description" content="GET和POST的区别（1）GET请求在浏览器回退时是无害的，而POST会再次提交。（2）GET请求会被浏览器主动缓存，而POST不会。（3）GET请求参数会被完整的保留到浏览器的历史记录中。（4）GET用URL传参，有长度限制，POST放在request.body上，无长度限制。 用GET的场景GET请求一般不会产生副作用，就是说，它仅仅是获取资源信息，就像数据库查询一样，不会修改，增加数据，不">
 
 
 
@@ -376,12 +380,34 @@
                 
               
 
-              <time title="创建时间：2018-09-09 10:53:01" itemprop="dateCreated datePublished" datetime="2018-09-09T10:53:01+08:00">2018-09-09</time>
+              <time title="创建时间：2018-09-09 10:53:01 / 修改时间：15:51:33" itemprop="dateCreated datePublished" datetime="2018-09-09T10:53:01+08:00">2018-09-09</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -428,7 +454,11 @@
       
 
       
-        
+        <h1 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h1><p>（1）GET请求在浏览器回退时是无害的，而POST会再次提交。<br>（2）GET请求会被浏览器主动缓存，而POST不会。<br>（3）GET请求参数会被完整的保留到浏览器的历史记录中。<br>（4）GET用URL传参，有长度限制，POST放在request.body上，无长度限制。</p>
+<h1 id="用GET的场景"><a href="#用GET的场景" class="headerlink" title="用GET的场景"></a>用GET的场景</h1><p>GET请求一般不会产生副作用，就是说，它仅仅是获取资源信息，就像数据库查询一样，不会修改，增加数据，不会影响资源的状态。对同一的URL的多个请求，应该返回同样的结果。在form表单中，method默认为GET。<br>①请求时为了查找资源，HTML表单数据仅用来帮助搜索，用GET<br>②请求结果无持续性的副作用，即不会修改数据，用GET<br>③收集的数据及HTML表单内的输入字段名称总长不超过1024个字符，用GET</p>
+<h1 id="用POST的场景"><a href="#用POST的场景" class="headerlink" title="用POST的场景"></a>用POST的场景</h1><p>根据http规范，POST用来表示可能修改服务器上的资源的请求。例如读者对新闻发表自己的评论应该通过POST实现。<br>①请求的结果有持续性的副作用，例如，数据库内添加新的数据行。用POST<br>②若使用GET方法，则表单手机的数据可能让URL过长。发送大量数据，用POST<br>③要传送的数据不是采用7位的ASCII编码。用POST<br>④无法使用缓存文件，例如更新服务器上的文件或数据库，用POST<br>⑤发送包含未知字符的用户输入时，POST比GET更稳定更可靠。</p>
+<h1 id="其他交互方法"><a href="#其他交互方法" class="headerlink" title="其他交互方法"></a>其他交互方法</h1><p>http定义了与服务器交互的不同方法，最常用的有四种，PUT，DELETE，POST，GET<br>（1）Get， 它用于获取信息，注意，他只是获取、查询数据，也就是说它不会修改服务器上的数据，从这点来讲，它是数据安全的，而稍后会提到的Post它是可以修改数据的，所以这也是两者差别之一了。<br>（2）Post，它是可以向服务器发送修改请求，从而修改服务器的，比方说，我们要在论坛上回贴、在博客上评论，这就要用到Post了，当然它也是可以仅仅获取数据的。<br>（3）Delete 删除数据。可以通过Get/Post来实现。<br>（4）Put，增加、放置数据，可以通过Get/Post来实现</p>
+
       
     </div>
 
@@ -485,6 +515,12 @@
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript-请求方法/" rel="tag"><i class = "fa fa-google"></i>-JavaScript -请求方法</a>
+          
+        </div>
       
 
       
@@ -559,6 +595,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/09/09/cookie的属性值及其安全性/" rel="prev" title="cookie各个参数及其安全性">
+                cookie各个参数及其安全性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -605,8 +645,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -625,7 +674,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -642,7 +691,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -709,7 +760,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -749,6 +804,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GET和POST的区别"><span class="nav-number">1.</span> <span class="nav-text">GET和POST的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用GET的场景"><span class="nav-number">2.</span> <span class="nav-text">用GET的场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用POST的场景"><span class="nav-number">3.</span> <span class="nav-text">用POST的场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他交互方法"><span class="nav-number">4.</span> <span class="nav-text">其他交互方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
